@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+docker-install -r -u -c bash curl
+
+mkdir -p /conf.d /conf.d/filebrowser /data
+
+curl -fsSL https://filebrowser.xyz/get.sh | bash
+
