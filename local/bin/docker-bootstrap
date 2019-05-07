@@ -10,8 +10,8 @@ touch /.init
 
 mkdir -p /conf.d/filebrowser
 
-if [ ! -s /conf.d/filebrowser/filebrowser ]; then
-	filebrowser config init -a 0.0.0.0 -p 8080 -r /data --locale ko -c /conf.d/filebrowser -d /conf.d/filebrowser/filebrowser.db
-	filebrowser users add admin admin --locale ko --perm.admin=true -c /conf.d/filebrowser -d /conf.d/filebrowser/filebrowser.db
+if [ ! -s /conf.d/filebrowser/filebrowser.db ]; then
+	filebrowser config init -a 0.0.0.0 -p 8080 -r /data -d /conf.d/filebrowser/filebrowser.db
+	filebrowser users add admin admin --perm.admin=true -d /conf.d/filebrowser/filebrowser.db
 fi
 
