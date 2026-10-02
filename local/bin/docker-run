@@ -11,6 +11,6 @@ set -e
 if [ -x /usr/local/bin/docker-run-alt ]; then
 	exec /usr/local/bin/docker-run-alt "${@}"
 else
-	exec /usr/local/bin/filebrowser -d /conf.d/filebrowser/filebrowser.db
+	exec /usr/local/bin/start_filebrowser.sh
 fi
 

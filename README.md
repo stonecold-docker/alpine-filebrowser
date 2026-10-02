@@ -68,5 +68,7 @@ docker run -d \
 
 | ENV                | Description                                      |
 |--------------------|--------------------------------------------------|
-| -                  | -                                                |
+| RUN_USER_NAME      | Application execute username (default : forumi721) |
+| RUN_USER_UID       | Application execute user uid (default : 1000)    |
+| RUN_USER_GID       | Application execute user gid (default : 100)     |
 

@@ -10,8 +10,18 @@ touch /.init
 
 mkdir -p /conf.d/filebrowser
 
+RUN_USER_NAME=${RUN_USER_NAME:-forumi0721}
+RUN_USER_UID=${RUN_USER_UID:-1000}
+RUN_USER_GID=${RUN_USER_GID:-100}
+
+docker-adduser -u ${RUN_USER_UID} -g ${RUN_USER_GID} -H /dev/null -S /sbin/nologin -R ${RUN_USER_NAME}
+
+docker-chown ${RUN_USER_NAME} /conf.d
+docker-chown ${RUN_USER_NAME} /conf.d/filebrowser
+
 if [ ! -s /conf.d/filebrowser/filebrowser.db ]; then
 	filebrowser config init -a 0.0.0.0 -p 8080 -r /data -d /conf.d/filebrowser/filebrowser.db
 	filebrowser users add admin admin --perm.admin=true -d /conf.d/filebrowser/filebrowser.db
 fi
 
+docker-chown ${RUN_USER_NAME} /conf.d/filebrowser/filebrowser.db
