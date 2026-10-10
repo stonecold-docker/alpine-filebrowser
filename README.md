@@ -5,10 +5,10 @@
 
 
 ----------------------------------------
-### x64
-![Docker Image Size](https://img.shields.io/docker/image-size/forumi0721/alpine-filebrowser/x64)
-### aarch64
-![Docker Image Size](https://img.shields.io/docker/image-size/forumi0721/alpine-filebrowser/aarch64)
+### amd64
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/forumi0721/alpine-filebrowser/latest?arch=amd64)
+### arm64
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/forumi0721/alpine-filebrowser/latest?arch=arm64)
 
 
 
@@ -16,8 +16,8 @@
 #### Description
 
 * Distribution : [Alpine Linux](https://alpinelinux.org/)
-* Architecture : x64,aarch64
-* Appplication : [File Browser](https://github.com/filebrowser/filebrowser)
+* Architecture : amd64, arm64
+* Application : [File Browser](https://github.com/filebrowser/filebrowser)
     - Web File Browser which can be used as a middleware or standalone app.
 
 
@@ -29,7 +29,7 @@
 docker run -d \
            -p 8080:8080/tcp \
            -v /conf.d:/conf.d \
-           forumi0721/alpine-filebrowser:[ARCH_TAG]
+           forumi0721/alpine-filebrowser:latest
 ```
 
 
